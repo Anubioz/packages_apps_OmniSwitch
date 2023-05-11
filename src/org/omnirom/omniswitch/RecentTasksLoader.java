@@ -275,7 +275,7 @@ public class RecentTasksLoader {
                     TaskDescription item = createTaskDescription(recentInfo.id,
                             recentInfo.persistentId,
                             recentInfo.baseIntent, recentInfo.origActivity,
-                            recentInfo.supportsSplitScreenMultiWindow,
+                            recentInfo.supportsMultiWindow,
                             android.app.WindowConfiguration.inMultiWindowMode(
                                     recentInfo.configuration.windowConfiguration.getWindowingMode()));
 
@@ -388,7 +388,7 @@ public class RecentTasksLoader {
 
     private ThumbnailData getThumbnail(int taskId) {
         try {
-            TaskSnapshot snapshot = ActivityTaskManager.getService().getTaskSnapshot(taskId, true);
+            TaskSnapshot snapshot = ActivityTaskManager.getService().getTaskSnapshot(taskId, true, true);
             if (snapshot != null) {
                 if (DEBUG) {
                     Log.d(TAG, "getThumbnail " + taskId);

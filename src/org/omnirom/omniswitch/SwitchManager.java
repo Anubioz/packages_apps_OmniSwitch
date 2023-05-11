@@ -34,7 +34,7 @@ import android.app.ActivityOptions;
 import android.app.ActivityTaskManager;
 import android.app.IActivityManager;
 import android.app.TaskStackBuilder;
-import static android.app.WindowConfiguration.WINDOWING_MODE_SPLIT_SCREEN_PRIMARY;
+import static android.app.WindowConfiguration.WINDOWING_MODE_MULTI_WINDOW;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -639,7 +639,7 @@ public class SwitchManager {
 
     private ActivityOptions makeSplitScreenOptions(boolean dockTopLeft) {
         final ActivityOptions options = ActivityOptions.makeBasic();
-        options.setLaunchWindowingMode(WINDOWING_MODE_SPLIT_SCREEN_PRIMARY);
+        options.setLaunchWindowingMode(WINDOWING_MODE_MULTI_WINDOW);
         return options;
     }
 }
